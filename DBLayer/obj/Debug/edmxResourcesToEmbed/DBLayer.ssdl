@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Clc_App_CHKModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Clc_App_CHK.dbo.bkpTbl_BP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="bkpTbl_BP">
+    <Key>
+      <PropertyRef Name="bp_Id" />
+    </Key>
+    <Property Name="bp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="systolic" Type="int" />
+    <Property Name="diastolic" Type="int" />
+    <Property Name="Diagnosis" Type="varchar" MaxLength="50" />
+    <Property Name="Diabetes" Type="bit" />
+    <Property Name="HeartAttackInLast3Year" Type="bit" />
+    <Property Name="Stroke" Type="bit" />
+    <Property Name="KindneyDisease" Type="bit" />
+    <Property Name="CheckUp_Id" Type="int" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="is_Active" Type="bit" />
+    <Property Name="is_Deleted" Type="bit" />
+    <Property Name="created_On" Type="varchar" MaxLength="50" />
+    <Property Name="created_By" Type="varchar" MaxLength="50" />
+    <Property Name="update_On" Type="varchar" MaxLength="50" />
+    <Property Name="updated_By" Type="varchar" MaxLength="50" />
+    <Property Name="patient_Id" Type="int" />
+    <Property Name="insertion_Timestamp" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Clc_App_CHK.dbo.bkpTbl_Medication' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="bkpTbl_Medication">
+    <Key>
+      <PropertyRef Name="Medication_Id" />
+    </Key>
+    <Property Name="Medication_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CheckUp_Id" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Dosage" Type="varchar" MaxLength="50" />
+    <Property Name="Frequency" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="Created_On" Type="varchar" MaxLength="50" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Update_On" Type="varchar" MaxLength="50" />
+    <Property Name="Updated_By" Type="varchar" MaxLength="50" />
+    <Property Name="bp_Id" Type="int" />
+    <Property Name="Dosage_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Table_W_Address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Area" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PlotNo" Type="int" Nullable="false" />
+    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="District" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Latitude" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="longitude" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_W_AddressUserMaping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AddressId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_W_Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedDate" Type="date" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_W_User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_W_UserRoleMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Address">
+    <Key>
+      <PropertyRef Name="address_Id" />
+    </Key>
+    <Property Name="address_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="street_Address" Type="varchar" MaxLength="50" />
+    <Property Name="village_Or_Colony" Type="varchar" MaxLength="50" />
+    <Property Name="district" Type="varchar" MaxLength="50" />
+    <Property Name="state" Type="varchar" MaxLength="50" />
+    <Property Name="country" Type="varchar" MaxLength="50" />
+    <Property Name="pin" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="is_Active" Type="bit" />
+    <Property Name="is_Deleted" Type="bit" />
+    <Property Name="created_On" Type="datetime" />
+    <Property Name="created_By" Type="varchar" MaxLength="50" />
+    <Property Name="update_On" Type="datetime" />
+    <Property Name="update_By" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Admin">
+    <Key>
+      <PropertyRef Name="admin_Id" />
+    </Key>
+    <Property Name="admin_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="phoneNo" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="encrypted_Password" Type="varchar" MaxLength="50" />
+    <Property Name="reset_Password_Token" Type="varchar" MaxLength="50" />
+    <Property Name="sign_In_Count" Type="int" />
+    <Property Name="Current_Sign_In_at" Type="varchar" MaxLength="50" />
+    <Property Name="last_Sign_In_at" Type="datetime" />
+    <Property Name="failed_attempts" Type="int" />
+    <Property Name="locked_at" Type="varchar" MaxLength="50" />
+    <Property Name="role" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="Created_On" Type="varchar" MaxLength="50" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Update_On" Type="varchar" MaxLength="50" />
+    <Property Name="Update_By" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_BP">
+    <Key>
+      <PropertyRef Name="bp_Id" />
+    </Key>
+    <Property Name="bp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="systolic" Type="int" />
+    <Property Name="diastolic" Type="int" />
+    <Property Name="Diagnosis" Type="varchar" MaxLength="50" />
+    <Property Name="Diabetes" Type="bit" />
+    <Property Name="HeartAttackInLast3Year" Type="bit" />
+    <Property Name="Stroke" Type="bit" />
+    <Property Name="KindneyDisease" Type="bit" />
+    <Property Name="CheckUp_Id" Type="int" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="is_Active" Type="bit" />
+    <Property Name="is_Deleted" Type="bit" />
+    <Property Name="created_On" Type="date" />
+    <Property Name="created_By" Type="varchar" MaxLength="50" />
+    <Property Name="update_On" Type="varchar" MaxLength="50" />
+    <Property Name="updated_By" Type="varchar" MaxLength="50" />
+    <Property Name="patient_Id" Type="int" />
+    <Property Name="insertion_Timestamp" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_District">
+    <Key>
+      <PropertyRef Name="district_Id" />
+    </Key>
+    <Property Name="district_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="district_Name" Type="varchar" MaxLength="50" />
+    <Property Name="state_name" Type="varchar" MaxLength="50" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="isDelete" Type="bit" />
+    <Property Name="created_On" Type="varchar" MaxLength="50" />
+    <Property Name="created_By" Type="varchar" MaxLength="50" />
+    <Property Name="updated_On" Type="varchar" MaxLength="50" />
+    <Property Name="updated_By" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Dosage">
+    <Key>
+      <PropertyRef Name="Dosage_Id" />
+    </Key>
+    <Property Name="Dosage_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dosage_name" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="Created_On" Type="varchar" MaxLength="50" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Updated_On" Type="varchar" MaxLength="50" />
+    <Property Name="Updated_By" Type="varchar" MaxLength="50" />
+    <Property Name="Med_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Dosage_Range" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Encounters">
+    <Key>
+      <PropertyRef Name="CheckUp_id" />
+    </Key>
+    <Property Name="CheckUp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date" Type="varchar" MaxLength="50" />
+    <Property Name="patient_id" Type="int" />
+    <Property Name="admin_id" Type="int" />
+    <Property Name="next_Appointment_date" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="Created_On" Type="varchar" MaxLength="50" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Updated_On" Type="varchar" MaxLength="50" />
+    <Property Name="Updated_By" Type="varchar" MaxLength="50" />
+    <Property Name="bp_Id" Type="int" />
+    <Property Name="insertion_Timestamp" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="next_Appointment_Timestamp" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Tbl_facility">
+    <Key>
+      <PropertyRef Name="facility_Id" />
+    </Key>
+    <Property Name="facility_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="address_Id" Type="int" />
+    <Property Name="facility_Type" Type="varchar" MaxLength="50" />
+    <Property Name="latitude" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="longitude" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="IsAstive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="created_On" Type="datetime" />
+    <Property Name="created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Updated_On" Type="datetime" />
+    <Property Name="Update_By" Type="varchar" MaxLength="50" />
+    <Property Name="facility_Group_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_Med">
+    <Key>
+      <PropertyRef Name="Med_Id" />
+    </Key>
+    <Property Name="Med_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Med_Name" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="Created_On" Type="varchar" MaxLength="50" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Updated_On" Type="varchar" MaxLength="50" />
+    <Property Name="Updated_By" Type="varchar" MaxLength="50" />
+    <Property Name="Class" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Medication">
+    <Key>
+      <PropertyRef Name="Medication_Id" />
+    </Key>
+    <Property Name="Medication_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CheckUp_Id" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Dosage" Type="varchar" MaxLength="50" />
+    <Property Name="Frequency" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="Created_On" Type="date" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Update_On" Type="varchar" MaxLength="50" />
+    <Property Name="Updated_By" Type="varchar" MaxLength="50" />
+    <Property Name="bp_Id" Type="int" />
+    <Property Name="Dosage_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_Patient">
+    <Key>
+      <PropertyRef Name="patient_Id" />
+    </Key>
+    <Property Name="patient_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="full_Name" Type="varchar" MaxLength="50" />
+    <Property Name="age" Type="int" />
+    <Property Name="gender" Type="varchar" MaxLength="50" />
+    <Property Name="date_Of_Brith" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="address_Id" Type="varchar" MaxLength="50" />
+    <Property Name="age_Updated_at" Type="varchar" MaxLength="50" />
+    <Property Name="device_Created_at" Type="varchar" MaxLength="50" />
+    <Property Name="device_Updated_at" Type="varchar" MaxLength="50" />
+    <Property Name="test_data" Type="bit" />
+    <Property Name="registration_facility_id" Type="int" />
+    <Property Name="registration_User_Id" Type="int" />
+    <Property Name="contacted_By_Counsellor" Type="bit" />
+    <Property Name="could_Not_Contact_Reason" Type="varchar" MaxLength="50" />
+    <Property Name="recorded_at" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="is_Active" Type="bit" />
+    <Property Name="is_Deleted" Type="bit" />
+    <Property Name="created_On" Type="date" />
+    <Property Name="created_By" Type="varchar" MaxLength="50" />
+    <Property Name="updated_On" Type="date" />
+    <Property Name="updated_By" Type="varchar" MaxLength="50" />
+    <Property Name="phone_No" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="Admin_PhoneNo" Type="varchar" MaxLength="50" />
+    <Property Name="Enrollment_Date" Type="varchar" MaxLength="50" />
+    <Property Name="district_Name" Type="varchar" MaxLength="50" />
+    <Property Name="insertion_timestamp" Type="decimal" Precision="18" Scale="6" />
+    <Property Name="nexttime_stamp" Type="decimal" Precision="18" Scale="6" />
+  </EntityType>
+  <EntityType Name="Tbl_State">
+    <Key>
+      <PropertyRef Name="state_Id" />
+    </Key>
+    <Property Name="state_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="state_Name" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="Created_On" Type="varchar" MaxLength="50" />
+    <Property Name="Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="Update_On" Type="varchar" MaxLength="50" />
+    <Property Name="Update_By" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Suggested_Medicine">
+    <Key>
+      <PropertyRef Name="S_Medicine_Id" />
+    </Key>
+    <Property Name="S_Medicine_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="S_Medicine_Name" Type="varchar" MaxLength="50" />
+    <Property Name="S_Medicine_Dosage" Type="varchar" MaxLength="50" />
+    <Property Name="S_Is_Active" Type="bit" />
+    <Property Name="S_Is_Deleted" Type="bit" />
+    <Property Name="S_Created_On" Type="varchar" MaxLength="50" />
+    <Property Name="S_Created_By" Type="varchar" MaxLength="50" />
+    <Property Name="S_Updated_On" Type="varchar" MaxLength="50" />
+    <Property Name="S_Updated_By" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Users">
+    <Key>
+      <PropertyRef Name="User_Id" />
+    </Key>
+    <Property Name="User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Last_Name" Type="varchar" MaxLength="50" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="Phone_No" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="District" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Clc_App_CHK.dbo.TblBKBP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TblBKBP">
+    <Key>
+      <PropertyRef Name="bp_Id" />
+    </Key>
+    <Property Name="bp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date" Type="date" />
+    <Property Name="Created_On" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Clc_App_CHK.dbo.TblBKPAT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TblBKPAT">
+    <Key>
+      <PropertyRef Name="patient_Id" />
+    </Key>
+    <Property Name="patient_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="N_date_Of_Brith" Type="date" />
+    <Property Name="date_Of_Brith" Type="varchar" MaxLength="50" />
+    <Property Name="N_Recorded_at" Type="date" />
+    <Property Name="recorded_at" Type="varchar" MaxLength="50" />
+    <Property Name="N_Enrollment_Date" Type="date" />
+    <Property Name="Enrollment_Date" Type="varchar" MaxLength="50" />
+    <Property Name="N_created_On" Type="date" />
+    <Property Name="created_On" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Clc_App_CHK.dbo.TblBKPMED' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TblBKPMED">
+    <Key>
+      <PropertyRef Name="Medication_Id" />
+    </Key>
+    <Property Name="Medication_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date" Type="date" />
+    <Property Name="Created_On" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Table_W_UserRoleMapping_Table_W_Role">
+    <End Role="Table_W_Role" Type="Self.Table_W_Role" Multiplicity="1" />
+    <End Role="Table_W_UserRoleMapping" Type="Self.Table_W_UserRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_W_Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Table_W_UserRoleMapping">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_W_UserRoleMapping_Table_W_User">
+    <End Role="Table_W_User" Type="Self.Table_W_User" Multiplicity="1" />
+    <End Role="Table_W_UserRoleMapping" Type="Self.Table_W_UserRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_W_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Table_W_UserRoleMapping">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Clc_App_CHKModelStoreContainer">
+    <EntitySet Name="Table_W_Address" EntityType="Self.Table_W_Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_W_AddressUserMaping" EntityType="Self.Table_W_AddressUserMaping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_W_Role" EntityType="Self.Table_W_Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_W_User" EntityType="Self.Table_W_User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_W_UserRoleMapping" EntityType="Self.Table_W_UserRoleMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Address" EntityType="Self.Tbl_Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Admin" EntityType="Self.Tbl_Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_BP" EntityType="Self.Tbl_BP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_District" EntityType="Self.Tbl_District" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Dosage" EntityType="Self.Tbl_Dosage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Encounters" EntityType="Self.Tbl_Encounters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_facility" EntityType="Self.Tbl_facility" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Med" EntityType="Self.Tbl_Med" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Medication" EntityType="Self.Tbl_Medication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Patient" EntityType="Self.Tbl_Patient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_State" EntityType="Self.Tbl_State" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Suggested_Medicine" EntityType="Self.Tbl_Suggested_Medicine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Users" EntityType="Self.Tbl_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bkpTbl_BP" EntityType="Self.bkpTbl_BP" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [bkpTbl_BP].[bp_Id] AS [bp_Id], 
+    [bkpTbl_BP].[systolic] AS [systolic], 
+    [bkpTbl_BP].[diastolic] AS [diastolic], 
+    [bkpTbl_BP].[Diagnosis] AS [Diagnosis], 
+    [bkpTbl_BP].[Diabetes] AS [Diabetes], 
+    [bkpTbl_BP].[HeartAttackInLast3Year] AS [HeartAttackInLast3Year], 
+    [bkpTbl_BP].[Stroke] AS [Stroke], 
+    [bkpTbl_BP].[KindneyDisease] AS [KindneyDisease], 
+    [bkpTbl_BP].[CheckUp_Id] AS [CheckUp_Id], 
+    [bkpTbl_BP].[name] AS [name], 
+    [bkpTbl_BP].[is_Active] AS [is_Active], 
+    [bkpTbl_BP].[is_Deleted] AS [is_Deleted], 
+    [bkpTbl_BP].[created_On] AS [created_On], 
+    [bkpTbl_BP].[created_By] AS [created_By], 
+    [bkpTbl_BP].[update_On] AS [update_On], 
+    [bkpTbl_BP].[updated_By] AS [updated_By], 
+    [bkpTbl_BP].[patient_Id] AS [patient_Id], 
+    [bkpTbl_BP].[insertion_Timestamp] AS [insertion_Timestamp]
+    FROM [dbo].[bkpTbl_BP] AS [bkpTbl_BP]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="bkpTbl_Medication" EntityType="Self.bkpTbl_Medication" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [bkpTbl_Medication].[Medication_Id] AS [Medication_Id], 
+    [bkpTbl_Medication].[CheckUp_Id] AS [CheckUp_Id], 
+    [bkpTbl_Medication].[Name] AS [Name], 
+    [bkpTbl_Medication].[Dosage] AS [Dosage], 
+    [bkpTbl_Medication].[Frequency] AS [Frequency], 
+    [bkpTbl_Medication].[IsActive] AS [IsActive], 
+    [bkpTbl_Medication].[IsDeleted] AS [IsDeleted], 
+    [bkpTbl_Medication].[Created_On] AS [Created_On], 
+    [bkpTbl_Medication].[Created_By] AS [Created_By], 
+    [bkpTbl_Medication].[Update_On] AS [Update_On], 
+    [bkpTbl_Medication].[Updated_By] AS [Updated_By], 
+    [bkpTbl_Medication].[bp_Id] AS [bp_Id], 
+    [bkpTbl_Medication].[Dosage_Id] AS [Dosage_Id]
+    FROM [dbo].[bkpTbl_Medication] AS [bkpTbl_Medication]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TblBKBP" EntityType="Self.TblBKBP" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TblBKBP].[bp_Id] AS [bp_Id], 
+    [TblBKBP].[date] AS [date], 
+    [TblBKBP].[Created_On] AS [Created_On]
+    FROM [dbo].[TblBKBP] AS [TblBKBP]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TblBKPAT" EntityType="Self.TblBKPAT" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TblBKPAT].[patient_Id] AS [patient_Id], 
+    [TblBKPAT].[N_date_Of_Brith] AS [N_date_Of_Brith], 
+    [TblBKPAT].[date_Of_Brith] AS [date_Of_Brith], 
+    [TblBKPAT].[N_Recorded_at] AS [N_Recorded_at], 
+    [TblBKPAT].[recorded_at] AS [recorded_at], 
+    [TblBKPAT].[N_Enrollment_Date] AS [N_Enrollment_Date], 
+    [TblBKPAT].[Enrollment_Date] AS [Enrollment_Date], 
+    [TblBKPAT].[N_created_On] AS [N_created_On], 
+    [TblBKPAT].[created_On] AS [created_On]
+    FROM [dbo].[TblBKPAT] AS [TblBKPAT]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TblBKPMED" EntityType="Self.TblBKPMED" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TblBKPMED].[Medication_Id] AS [Medication_Id], 
+    [TblBKPMED].[date] AS [date], 
+    [TblBKPMED].[Created_On] AS [Created_On]
+    FROM [dbo].[TblBKPMED] AS [TblBKPMED]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Table_W_UserRoleMapping_Table_W_Role" Association="Self.FK_Table_W_UserRoleMapping_Table_W_Role">
+      <End Role="Table_W_Role" EntitySet="Table_W_Role" />
+      <End Role="Table_W_UserRoleMapping" EntitySet="Table_W_UserRoleMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_W_UserRoleMapping_Table_W_User" Association="Self.FK_Table_W_UserRoleMapping_Table_W_User">
+      <End Role="Table_W_User" EntitySet="Table_W_User" />
+      <End Role="Table_W_UserRoleMapping" EntitySet="Table_W_UserRoleMapping" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

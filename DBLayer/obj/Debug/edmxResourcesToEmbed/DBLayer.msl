@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Clc_App_CHKModelStoreContainer" CdmEntityContainer="Clc_App_CHKEntities">
+    <EntitySetMapping Name="Table_W_Address">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Table_W_Address">
+        <MappingFragment StoreEntitySet="Table_W_Address">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="PlotNo" ColumnName="PlotNo" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_W_AddressUserMaping">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Table_W_AddressUserMaping">
+        <MappingFragment StoreEntitySet="Table_W_AddressUserMaping">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_W_Role">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Table_W_Role">
+        <MappingFragment StoreEntitySet="Table_W_Role">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_W_User">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Table_W_User">
+        <MappingFragment StoreEntitySet="Table_W_User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table_W_UserRoleMapping">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Table_W_UserRoleMapping">
+        <MappingFragment StoreEntitySet="Table_W_UserRoleMapping">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Address">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Tbl_Address">
+        <MappingFragment StoreEntitySet="Tbl_Address">
+          <ScalarProperty Name="address_Id" ColumnName="address_Id" />
+          <ScalarProperty Name="street_Address" ColumnName="street_Address" />
+          <ScalarProperty Name="village_Or_Colony" ColumnName="village_Or_Colony" />
+          <ScalarProperty Name="district" ColumnName="district" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="pin" ColumnName="pin" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="is_Active" ColumnName="is_Active" />
+          <ScalarProperty Name="is_Deleted" ColumnName="is_Deleted" />
+          <ScalarProperty Name="created_On" ColumnName="created_On" />
+          <ScalarProperty Name="created_By" ColumnName="created_By" />
+          <ScalarProperty Name="update_On" ColumnName="update_On" />
+          <ScalarProperty Name="update_By" ColumnName="update_By" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Admin">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Tbl_Admin">
+        <MappingFragment StoreEntitySet="Tbl_Admin">
+          <ScalarProperty Name="admin_Id" ColumnName="admin_Id" />
+          <ScalarProperty Name="phoneNo" ColumnName="phoneNo" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="encrypted_Password" ColumnName="encrypted_Password" />
+          <ScalarProperty Name="reset_Password_Token" ColumnName="reset_Password_Token" />
+          <ScalarProperty Name="sign_In_Count" ColumnName="sign_In_Count" />
+          <ScalarProperty Name="Current_Sign_In_at" ColumnName="Current_Sign_In_at" />
+          <ScalarProperty Name="last_Sign_In_at" ColumnName="last_Sign_In_at" />
+          <ScalarProperty Name="failed_attempts" ColumnName="failed_attempts" />
+          <ScalarProperty Name="locked_at" ColumnName="locked_at" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Update_On" ColumnName="Update_On" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_BP">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Tbl_BP">
+        <MappingFragment StoreEntitySet="Tbl_BP">
+          <ScalarProperty Name="bp_Id" ColumnName="bp_Id" />
+          <ScalarProperty Name="systolic" ColumnName="systolic" />
+          <ScalarProperty Name="diastolic" ColumnName="diastolic" />
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+          <ScalarProperty Name="Diabetes" ColumnName="Diabetes" />
+          <ScalarProperty Name="HeartAttackInLast3Year" ColumnName="HeartAttackInLast3Year" />
+          <ScalarProperty Name="Stroke" ColumnName="Stroke" />
+          <ScalarProperty Name="KindneyDisease" ColumnName="KindneyDisease" />
+          <ScalarProperty Name="CheckUp_Id" ColumnName="CheckUp_Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="is_Active" ColumnName="is_Active" />
+          <ScalarProperty Name="is_Deleted" ColumnName="is_Deleted" />
+          <ScalarProperty Name="created_On" ColumnName="created_On" />
+          <ScalarProperty Name="created_By" ColumnName="created_By" />
+          <ScalarProperty Name="update_On" ColumnName="update_On" />
+          <ScalarProperty Name="updated_By" ColumnName="updated_By" />
+          <ScalarProperty Name="patient_Id" ColumnName="patient_Id" />
+          <ScalarProperty Name="insertion_Timestamp" ColumnName="insertion_Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_District">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Tbl_District">
+        <MappingFragment StoreEntitySet="Tbl_District">
+          <ScalarProperty Name="district_Id" ColumnName="district_Id" />
+          <ScalarProperty Name="district_Name" ColumnName="district_Name" />
+          <ScalarProperty Name="state_name" ColumnName="state_name" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+          <ScalarProperty Name="created_On" ColumnName="created_On" />
+          <ScalarProperty Name="created_By" ColumnName="created_By" />
+          <ScalarProperty Name="updated_On" ColumnName="updated_On" />
+          <ScalarProperty Name="updated_By" ColumnName="updated_By" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Dosage">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Tbl_Dosage">
+        <MappingFragment StoreEntitySet="Tbl_Dosage">
+          <ScalarProperty Name="Dosage_Id" ColumnName="Dosage_Id" />
+          <ScalarProperty Name="Dosage_name" ColumnName="Dosage_name" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Updated_On" ColumnName="Updated_On" />
+          <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+          <ScalarProperty Name="Med_Name" ColumnName="Med_Name" />
+          <ScalarProperty Name="Dosage_Range" ColumnName="Dosage_Range" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Encounters">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Tbl_Encounters">
+        <MappingFragment StoreEntitySet="Tbl_Encounters">
+          <ScalarProperty Name="CheckUp_id" ColumnName="CheckUp_id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="patient_id" ColumnName="patient_id" />
+          <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+          <ScalarProperty Name="next_Appointment_date" ColumnName="next_Appointment_date" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Updated_On" ColumnName="Updated_On" />
+          <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+          <ScalarProperty Name="bp_Id" ColumnName="bp_Id" />
+          <ScalarProperty Name="insertion_Timestamp" ColumnName="insertion_Timestamp" />
+          <ScalarProperty Name="next_Appointment_Timestamp" ColumnName="next_Appointment_Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_facility">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Tbl_facility">
+        <MappingFragment StoreEntitySet="Tbl_facility">
+          <ScalarProperty Name="facility_Id" ColumnName="facility_Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address_Id" ColumnName="address_Id" />
+          <ScalarProperty Name="facility_Type" ColumnName="facility_Type" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="IsAstive" ColumnName="IsAstive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="created_On" ColumnName="created_On" />
+          <ScalarProperty Name="created_By" ColumnName="created_By" />
+          <ScalarProperty Name="Updated_On" ColumnName="Updated_On" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="facility_Group_Id" ColumnName="facility_Group_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Med">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Tbl_Med">
+        <MappingFragment StoreEntitySet="Tbl_Med">
+          <ScalarProperty Name="Med_Id" ColumnName="Med_Id" />
+          <ScalarProperty Name="Med_Name" ColumnName="Med_Name" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Updated_On" ColumnName="Updated_On" />
+          <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Medication">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Tbl_Medication">
+        <MappingFragment StoreEntitySet="Tbl_Medication">
+          <ScalarProperty Name="Medication_Id" ColumnName="Medication_Id" />
+          <ScalarProperty Name="CheckUp_Id" ColumnName="CheckUp_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Dosage" ColumnName="Dosage" />
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Update_On" ColumnName="Update_On" />
+          <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+          <ScalarProperty Name="bp_Id" ColumnName="bp_Id" />
+          <ScalarProperty Name="Dosage_Id" ColumnName="Dosage_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Patient">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Tbl_Patient">
+        <MappingFragment StoreEntitySet="Tbl_Patient">
+          <ScalarProperty Name="patient_Id" ColumnName="patient_Id" />
+          <ScalarProperty Name="full_Name" ColumnName="full_Name" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="date_Of_Brith" ColumnName="date_Of_Brith" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="address_Id" ColumnName="address_Id" />
+          <ScalarProperty Name="age_Updated_at" ColumnName="age_Updated_at" />
+          <ScalarProperty Name="device_Created_at" ColumnName="device_Created_at" />
+          <ScalarProperty Name="device_Updated_at" ColumnName="device_Updated_at" />
+          <ScalarProperty Name="test_data" ColumnName="test_data" />
+          <ScalarProperty Name="registration_facility_id" ColumnName="registration_facility_id" />
+          <ScalarProperty Name="registration_User_Id" ColumnName="registration_User_Id" />
+          <ScalarProperty Name="contacted_By_Counsellor" ColumnName="contacted_By_Counsellor" />
+          <ScalarProperty Name="could_Not_Contact_Reason" ColumnName="could_Not_Contact_Reason" />
+          <ScalarProperty Name="recorded_at" ColumnName="recorded_at" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="is_Active" ColumnName="is_Active" />
+          <ScalarProperty Name="is_Deleted" ColumnName="is_Deleted" />
+          <ScalarProperty Name="created_On" ColumnName="created_On" />
+          <ScalarProperty Name="created_By" ColumnName="created_By" />
+          <ScalarProperty Name="updated_On" ColumnName="updated_On" />
+          <ScalarProperty Name="updated_By" ColumnName="updated_By" />
+          <ScalarProperty Name="phone_No" ColumnName="phone_No" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="Admin_PhoneNo" ColumnName="Admin_PhoneNo" />
+          <ScalarProperty Name="Enrollment_Date" ColumnName="Enrollment_Date" />
+          <ScalarProperty Name="district_Name" ColumnName="district_Name" />
+          <ScalarProperty Name="insertion_timestamp" ColumnName="insertion_timestamp" />
+          <ScalarProperty Name="nexttime_stamp" ColumnName="nexttime_stamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_State">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Tbl_State">
+        <MappingFragment StoreEntitySet="Tbl_State">
+          <ScalarProperty Name="state_Id" ColumnName="state_Id" />
+          <ScalarProperty Name="state_Name" ColumnName="state_Name" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Update_On" ColumnName="Update_On" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Suggested_Medicine">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Tbl_Suggested_Medicine">
+        <MappingFragment StoreEntitySet="Tbl_Suggested_Medicine">
+          <ScalarProperty Name="S_Medicine_Id" ColumnName="S_Medicine_Id" />
+          <ScalarProperty Name="S_Medicine_Name" ColumnName="S_Medicine_Name" />
+          <ScalarProperty Name="S_Medicine_Dosage" ColumnName="S_Medicine_Dosage" />
+          <ScalarProperty Name="S_Is_Active" ColumnName="S_Is_Active" />
+          <ScalarProperty Name="S_Is_Deleted" ColumnName="S_Is_Deleted" />
+          <ScalarProperty Name="S_Created_On" ColumnName="S_Created_On" />
+          <ScalarProperty Name="S_Created_By" ColumnName="S_Created_By" />
+          <ScalarProperty Name="S_Updated_On" ColumnName="S_Updated_On" />
+          <ScalarProperty Name="S_Updated_By" ColumnName="S_Updated_By" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Users">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.Tbl_Users">
+        <MappingFragment StoreEntitySet="Tbl_Users">
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bkpTbl_BP">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.bkpTbl_BP">
+        <MappingFragment StoreEntitySet="bkpTbl_BP">
+          <ScalarProperty Name="bp_Id" ColumnName="bp_Id" />
+          <ScalarProperty Name="systolic" ColumnName="systolic" />
+          <ScalarProperty Name="diastolic" ColumnName="diastolic" />
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+          <ScalarProperty Name="Diabetes" ColumnName="Diabetes" />
+          <ScalarProperty Name="HeartAttackInLast3Year" ColumnName="HeartAttackInLast3Year" />
+          <ScalarProperty Name="Stroke" ColumnName="Stroke" />
+          <ScalarProperty Name="KindneyDisease" ColumnName="KindneyDisease" />
+          <ScalarProperty Name="CheckUp_Id" ColumnName="CheckUp_Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="is_Active" ColumnName="is_Active" />
+          <ScalarProperty Name="is_Deleted" ColumnName="is_Deleted" />
+          <ScalarProperty Name="created_On" ColumnName="created_On" />
+          <ScalarProperty Name="created_By" ColumnName="created_By" />
+          <ScalarProperty Name="update_On" ColumnName="update_On" />
+          <ScalarProperty Name="updated_By" ColumnName="updated_By" />
+          <ScalarProperty Name="patient_Id" ColumnName="patient_Id" />
+          <ScalarProperty Name="insertion_Timestamp" ColumnName="insertion_Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bkpTbl_Medication">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.bkpTbl_Medication">
+        <MappingFragment StoreEntitySet="bkpTbl_Medication">
+          <ScalarProperty Name="Medication_Id" ColumnName="Medication_Id" />
+          <ScalarProperty Name="CheckUp_Id" ColumnName="CheckUp_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Dosage" ColumnName="Dosage" />
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Update_On" ColumnName="Update_On" />
+          <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+          <ScalarProperty Name="bp_Id" ColumnName="bp_Id" />
+          <ScalarProperty Name="Dosage_Id" ColumnName="Dosage_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblBKBPs">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.TblBKBP">
+        <MappingFragment StoreEntitySet="TblBKBP">
+          <ScalarProperty Name="bp_Id" ColumnName="bp_Id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblBKPATs">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.TblBKPAT">
+        <MappingFragment StoreEntitySet="TblBKPAT">
+          <ScalarProperty Name="patient_Id" ColumnName="patient_Id" />
+          <ScalarProperty Name="N_date_Of_Brith" ColumnName="N_date_Of_Brith" />
+          <ScalarProperty Name="date_Of_Brith" ColumnName="date_Of_Brith" />
+          <ScalarProperty Name="N_Recorded_at" ColumnName="N_Recorded_at" />
+          <ScalarProperty Name="recorded_at" ColumnName="recorded_at" />
+          <ScalarProperty Name="N_Enrollment_Date" ColumnName="N_Enrollment_Date" />
+          <ScalarProperty Name="Enrollment_Date" ColumnName="Enrollment_Date" />
+          <ScalarProperty Name="N_created_On" ColumnName="N_created_On" />
+          <ScalarProperty Name="created_On" ColumnName="created_On" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblBKPMEDs">
+      <EntityTypeMapping TypeName="Clc_App_CHKModel.TblBKPMED">
+        <MappingFragment StoreEntitySet="TblBKPMED">
+          <ScalarProperty Name="Medication_Id" ColumnName="Medication_Id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

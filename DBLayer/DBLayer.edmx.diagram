@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6a02558cc9a1462294b665e3b8cb22e4" Name="Diagram1">
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Table_W_Address" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Table_W_AddressUserMaping" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Table_W_Role" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Table_W_User" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Table_W_UserRoleMapping" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Tbl_Address" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Tbl_Admin" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Tbl_BP" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Tbl_District" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Tbl_Dosage" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Tbl_Encounters" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Tbl_facility" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Tbl_Med" Width="1.5" PointX="8.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Tbl_Medication" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Tbl_Patient" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Tbl_State" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Tbl_Suggested_Medicine" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.Tbl_Users" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.bkpTbl_BP" Width="1.5" PointX="12.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.bkpTbl_Medication" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.TblBKBP" Width="1.5" PointX="14.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.TblBKPAT" Width="1.5" PointX="6.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clc_App_CHKModel.TblBKPMED" Width="1.5" PointX="14.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="Clc_App_CHKModel.FK_Table_W_UserRoleMapping_Table_W_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="Clc_App_CHKModel.FK_Table_W_UserRoleMapping_Table_W_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

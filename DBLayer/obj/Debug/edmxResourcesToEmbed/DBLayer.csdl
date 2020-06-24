@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Clc_App_CHKModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Table_W_Address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Area" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PlotNo" Type="Int32" Nullable="false" />
+    <Property Name="Street" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="District" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Latitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="longitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_W_AddressUserMaping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AddressId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table_W_Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Table_W_UserRoleMapping" Relationship="Self.FK_Table_W_UserRoleMapping_Table_W_Role" FromRole="Table_W_Role" ToRole="Table_W_UserRoleMapping" />
+  </EntityType>
+  <EntityType Name="Table_W_User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Table_W_UserRoleMapping" Relationship="Self.FK_Table_W_UserRoleMapping_Table_W_User" FromRole="Table_W_User" ToRole="Table_W_UserRoleMapping" />
+  </EntityType>
+  <EntityType Name="Table_W_UserRoleMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Table_W_Role" Relationship="Self.FK_Table_W_UserRoleMapping_Table_W_Role" FromRole="Table_W_UserRoleMapping" ToRole="Table_W_Role" />
+    <NavigationProperty Name="Table_W_User" Relationship="Self.FK_Table_W_UserRoleMapping_Table_W_User" FromRole="Table_W_UserRoleMapping" ToRole="Table_W_User" />
+  </EntityType>
+  <EntityType Name="Tbl_Address">
+    <Key>
+      <PropertyRef Name="address_Id" />
+    </Key>
+    <Property Name="address_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="street_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="village_Or_Colony" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="district" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_Active" Type="Boolean" />
+    <Property Name="is_Deleted" Type="Boolean" />
+    <Property Name="created_On" Type="DateTime" Precision="3" />
+    <Property Name="created_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_On" Type="DateTime" Precision="3" />
+    <Property Name="update_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Admin">
+    <Key>
+      <PropertyRef Name="admin_Id" />
+    </Key>
+    <Property Name="admin_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="phoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="encrypted_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="reset_Password_Token" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sign_In_Count" Type="Int32" />
+    <Property Name="Current_Sign_In_at" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="last_Sign_In_at" Type="DateTime" Precision="3" />
+    <Property Name="failed_attempts" Type="Int32" />
+    <Property Name="locked_at" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="Created_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Update_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Update_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Tbl_BP">
+    <Key>
+      <PropertyRef Name="bp_Id" />
+    </Key>
+    <Property Name="bp_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="systolic" Type="Int32" />
+    <Property Name="diastolic" Type="Int32" />
+    <Property Name="Diagnosis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Diabetes" Type="Boolean" />
+    <Property Name="HeartAttackInLast3Year" Type="Boolean" />
+    <Property Name="Stroke" Type="Boolean" />
+    <Property Name="KindneyDisease" Type="Boolean" />
+    <Property Name="CheckUp_Id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_Active" Type="Boolean" />
+    <Property Name="is_Deleted" Type="Boolean" />
+    <Property Name="created_On" Type="DateTime" Precision="0" />
+    <Property Name="created_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="patient_Id" Type="Int32" />
+    <Property Name="insertion_Timestamp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Tbl_District">
+    <Key>
+      <PropertyRef Name="district_Id" />
+    </Key>
+    <Property Name="district_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="district_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="state_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="isDelete" Type="Boolean" />
+    <Property Name="created_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="updated_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Dosage">
+    <Key>
+      <PropertyRef Name="Dosage_Id" />
+    </Key>
+    <Property Name="Dosage_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dosage_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="Created_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Updated_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Med_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dosage_Range" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Encounters">
+    <Key>
+      <PropertyRef Name="CheckUp_id" />
+    </Key>
+    <Property Name="CheckUp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="patient_id" Type="Int32" />
+    <Property Name="admin_id" Type="Int32" />
+    <Property Name="next_Appointment_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="Created_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Updated_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bp_Id" Type="Int32" />
+    <Property Name="insertion_Timestamp" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="next_Appointment_Timestamp" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Tbl_facility">
+    <Key>
+      <PropertyRef Name="facility_Id" />
+    </Key>
+    <Property Name="facility_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address_Id" Type="Int32" />
+    <Property Name="facility_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="latitude" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="longitude" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="IsAstive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="created_On" Type="DateTime" Precision="3" />
+    <Property Name="created_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Updated_On" Type="DateTime" Precision="3" />
+    <Property Name="Update_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="facility_Group_Id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Tbl_Med">
+    <Key>
+      <PropertyRef Name="Med_Id" />
+    </Key>
+    <Property Name="Med_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Med_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="Created_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Updated_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Medication">
+    <Key>
+      <PropertyRef Name="Medication_Id" />
+    </Key>
+    <Property Name="Medication_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CheckUp_Id" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dosage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Frequency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="Created_On" Type="DateTime" Precision="0" />
+    <Property Name="Created_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Update_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bp_Id" Type="Int32" />
+    <Property Name="Dosage_Id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Tbl_Patient">
+    <Key>
+      <PropertyRef Name="patient_Id" />
+    </Key>
+    <Property Name="patient_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="full_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="age" Type="Int32" />
+    <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="date_Of_Brith" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="age_Updated_at" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="device_Created_at" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="device_Updated_at" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="test_data" Type="Boolean" />
+    <Property Name="registration_facility_id" Type="Int32" />
+    <Property Name="registration_User_Id" Type="Int32" />
+    <Property Name="contacted_By_Counsellor" Type="Boolean" />
+    <Property Name="could_Not_Contact_Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="recorded_at" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_Active" Type="Boolean" />
+    <Property Name="is_Deleted" Type="Boolean" />
+    <Property Name="created_On" Type="DateTime" Precision="0" />
+    <Property Name="created_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="updated_On" Type="DateTime" Precision="0" />
+    <Property Name="updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Admin_PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Enrollment_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="district_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="insertion_timestamp" Type="Decimal" Precision="18" Scale="6" />
+    <Property Name="nexttime_stamp" Type="Decimal" Precision="18" Scale="6" />
+  </EntityType>
+  <EntityType Name="Tbl_State">
+    <Key>
+      <PropertyRef Name="state_Id" />
+    </Key>
+    <Property Name="state_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="state_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="Created_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Update_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Update_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Suggested_Medicine">
+    <Key>
+      <PropertyRef Name="S_Medicine_Id" />
+    </Key>
+    <Property Name="S_Medicine_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="S_Medicine_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="S_Medicine_Dosage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="S_Is_Active" Type="Boolean" />
+    <Property Name="S_Is_Deleted" Type="Boolean" />
+    <Property Name="S_Created_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="S_Created_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="S_Updated_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="S_Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Users">
+    <Key>
+      <PropertyRef Name="User_Id" />
+    </Key>
+    <Property Name="User_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DOB" Type="DateTime" Precision="0" />
+    <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="District" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="bkpTbl_BP">
+    <Key>
+      <PropertyRef Name="bp_Id" />
+    </Key>
+    <Property Name="bp_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="systolic" Type="Int32" />
+    <Property Name="diastolic" Type="Int32" />
+    <Property Name="Diagnosis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Diabetes" Type="Boolean" />
+    <Property Name="HeartAttackInLast3Year" Type="Boolean" />
+    <Property Name="Stroke" Type="Boolean" />
+    <Property Name="KindneyDisease" Type="Boolean" />
+    <Property Name="CheckUp_Id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_Active" Type="Boolean" />
+    <Property Name="is_Deleted" Type="Boolean" />
+    <Property Name="created_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="update_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="patient_Id" Type="Int32" />
+    <Property Name="insertion_Timestamp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="bkpTbl_Medication">
+    <Key>
+      <PropertyRef Name="Medication_Id" />
+    </Key>
+    <Property Name="Medication_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CheckUp_Id" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dosage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Frequency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="Created_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Update_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Updated_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bp_Id" Type="Int32" />
+    <Property Name="Dosage_Id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblBKBP">
+    <Key>
+      <PropertyRef Name="bp_Id" />
+    </Key>
+    <Property Name="bp_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="Created_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TblBKPAT">
+    <Key>
+      <PropertyRef Name="patient_Id" />
+    </Key>
+    <Property Name="patient_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="N_date_Of_Brith" Type="DateTime" Precision="0" />
+    <Property Name="date_Of_Brith" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="N_Recorded_at" Type="DateTime" Precision="0" />
+    <Property Name="recorded_at" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="N_Enrollment_Date" Type="DateTime" Precision="0" />
+    <Property Name="Enrollment_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="N_created_On" Type="DateTime" Precision="0" />
+    <Property Name="created_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TblBKPMED">
+    <Key>
+      <PropertyRef Name="Medication_Id" />
+    </Key>
+    <Property Name="Medication_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="Created_On" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Table_W_UserRoleMapping_Table_W_Role">
+    <End Role="Table_W_Role" Type="Self.Table_W_Role" Multiplicity="1" />
+    <End Role="Table_W_UserRoleMapping" Type="Self.Table_W_UserRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_W_Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Table_W_UserRoleMapping">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_W_UserRoleMapping_Table_W_User">
+    <End Role="Table_W_User" Type="Self.Table_W_User" Multiplicity="1" />
+    <End Role="Table_W_UserRoleMapping" Type="Self.Table_W_UserRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table_W_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Table_W_UserRoleMapping">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Clc_App_CHKEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Table_W_Address" EntityType="Self.Table_W_Address" />
+    <EntitySet Name="Table_W_AddressUserMaping" EntityType="Self.Table_W_AddressUserMaping" />
+    <EntitySet Name="Table_W_Role" EntityType="Self.Table_W_Role" />
+    <EntitySet Name="Table_W_User" EntityType="Self.Table_W_User" />
+    <EntitySet Name="Table_W_UserRoleMapping" EntityType="Self.Table_W_UserRoleMapping" />
+    <EntitySet Name="Tbl_Address" EntityType="Self.Tbl_Address" />
+    <EntitySet Name="Tbl_Admin" EntityType="Self.Tbl_Admin" />
+    <EntitySet Name="Tbl_BP" EntityType="Self.Tbl_BP" />
+    <EntitySet Name="Tbl_District" EntityType="Self.Tbl_District" />
+    <EntitySet Name="Tbl_Dosage" EntityType="Self.Tbl_Dosage" />
+    <EntitySet Name="Tbl_Encounters" EntityType="Self.Tbl_Encounters" />
+    <EntitySet Name="Tbl_facility" EntityType="Self.Tbl_facility" />
+    <EntitySet Name="Tbl_Med" EntityType="Self.Tbl_Med" />
+    <EntitySet Name="Tbl_Medication" EntityType="Self.Tbl_Medication" />
+    <EntitySet Name="Tbl_Patient" EntityType="Self.Tbl_Patient" />
+    <EntitySet Name="Tbl_State" EntityType="Self.Tbl_State" />
+    <EntitySet Name="Tbl_Suggested_Medicine" EntityType="Self.Tbl_Suggested_Medicine" />
+    <EntitySet Name="Tbl_Users" EntityType="Self.Tbl_Users" />
+    <EntitySet Name="bkpTbl_BP" EntityType="Self.bkpTbl_BP" />
+    <EntitySet Name="bkpTbl_Medication" EntityType="Self.bkpTbl_Medication" />
+    <EntitySet Name="TblBKBPs" EntityType="Self.TblBKBP" />
+    <EntitySet Name="TblBKPATs" EntityType="Self.TblBKPAT" />
+    <EntitySet Name="TblBKPMEDs" EntityType="Self.TblBKPMED" />
+    <AssociationSet Name="FK_Table_W_UserRoleMapping_Table_W_Role" Association="Self.FK_Table_W_UserRoleMapping_Table_W_Role">
+      <End Role="Table_W_Role" EntitySet="Table_W_Role" />
+      <End Role="Table_W_UserRoleMapping" EntitySet="Table_W_UserRoleMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_W_UserRoleMapping_Table_W_User" Association="Self.FK_Table_W_UserRoleMapping_Table_W_User">
+      <End Role="Table_W_User" EntitySet="Table_W_User" />
+      <End Role="Table_W_UserRoleMapping" EntitySet="Table_W_UserRoleMapping" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
