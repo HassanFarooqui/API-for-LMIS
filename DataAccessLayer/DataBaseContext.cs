@@ -21,5 +21,7 @@ namespace DataAccessLayer
         public DbSet<GenderModel> gender_Name { get; set; }
 
         public DbSet<PanelMasterModel> Panel_Master { get; set; }
+
+        public DbSet<Test> test { get; set; }
     }
 }

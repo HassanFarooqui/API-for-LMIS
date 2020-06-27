@@ -19,5 +19,6 @@ namespace DBServices
         List<PanelMasterModel> GetPanelNameList();
         List<Patient> GetPatientRecById(int pt_Id);
         Patient EditPatientRec(int id, Patient pt);
+   
     }
 }

@@ -15,6 +15,7 @@ namespace Water
             // it is NOT necessary to register your controllers
 
             container.RegisterType<IUserService, UserService>();
+            container.RegisterType<ITestService, Testservice>();
             // e.g. container.RegisterType<ITestService, TestService>();
             
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
