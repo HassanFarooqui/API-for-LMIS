@@ -91,15 +91,15 @@ namespace Water.Controllers
             }
         }
 
-        public ActionResult EditPatientRec(int id, Patient pt)
+        public ActionResult EditPatientRec( Patient pt)
         {
-            var pt_Id = _userService.EditPatientRec(id, pt);
+            var pt_Id = _userService.EditPatientRec(pt.ID, pt);
             if (pt_Id !=null)
             {
                 return Json(new
                 {
                     message = "Patient record update sucessfully",
-                    sucess = true,
+                    success = true,
                     model = pt
                 }, JsonRequestBehavior.AllowGet);
             }
@@ -108,7 +108,7 @@ namespace Water.Controllers
                 return Json(new
                 {
                     message = "Failed to update patient record",
-                    sucess = true
+                    success = false
                 }, JsonRequestBehavior.AllowGet);
             }
         }
