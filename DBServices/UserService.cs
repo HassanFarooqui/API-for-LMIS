@@ -48,7 +48,6 @@ namespace DBServices
             
         }
 
-
         public List<Patient> GetPatientList()
         {
             try
@@ -146,7 +145,6 @@ namespace DBServices
                 return null;
             }
         }
-
 
         public Patient EditPatientRec(int id, Patient pt)
         {
