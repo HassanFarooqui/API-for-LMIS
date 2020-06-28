@@ -10,5 +10,7 @@ namespace DBServices
     public interface ITestService
     {
         List<Test> GetTestList();
+        int AddTest(Test tst);
+        List<Test> GetTestRecById(int tst_Id);
     }
 }

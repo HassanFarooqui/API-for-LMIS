@@ -5,5 +5,6 @@ C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\DataAccessL
 C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\DataAccessLayer\bin\Debug\EntityFramework.xml
 C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

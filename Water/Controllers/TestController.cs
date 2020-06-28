@@ -21,7 +21,7 @@ namespace Water.Controllers
             _testService = testService;
         }
         [EnableCors(origins: "*", headers: "*", methods: "*")]
-        public ActionResult GetTestlist()
+        public ActionResult GetTestList()
         {
             List<Test> test = _testService.GetTestList();
             if (test.Count > 0)
@@ -43,6 +43,48 @@ namespace Water.Controllers
             }
         }
 
+        public ActionResult AddTest(Test tst)
+        {
+            var tstID = _testService.AddTest(tst);
+            if (tstID != 0)
+            {
+                return Json(new
+                {
+                    message = "Test save successfully",
+                    success = true,
+                    model = tstID
+                }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(new
+                {
+                    message = "Failed to save test",
+                    success = false
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+        public ActionResult GetTestRecordByID(int tst_Id)
+        {
+            var pt = _testService.GetTestRecById(tst_Id);
+            if (pt != null)
+            {
+                return Json(new
+                {
+                    message = "Test Rec is available",
+                    success = true,
+                    model = pt
+                }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(new
+                {
+                    message = "Test not exist",
+                    success = false
+                }, JsonRequestBehavior.AllowGet);
 
+            }
+        }
     }
 }

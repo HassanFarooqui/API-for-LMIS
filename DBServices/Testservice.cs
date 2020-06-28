@@ -28,5 +28,58 @@ namespace DBServices
             }
             return null;
         }
+
+        public int AddTest(Test tst)
+        {
+            tst.CreatedOn = DateTime.Now;
+            var Vtest = DB.test.Add(tst);
+            DB.SaveChanges();
+            if (Vtest != null)
+            {
+                return Vtest.TestId;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public List<Test> GetTestRecById(int tst_Id)
+        {
+            var tstRec = DB.test.Where(x => x.TestId == tst_Id).ToList();
+            if (tstRec != null && tstRec.Count() == 1)
+            {
+                return tstRec;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+
+        public Test EditTestRec(int id, Test tst)
+        {
+            if (id != tst.TestId)
+            {
+                return null;
+            }
+            else
+            {
+                var existingPatient = DB.test.Where(s => s.TestId == id).FirstOrDefault<Test>();
+                if (existingPatient != null)
+                {
+                    existingPatient.TestName = tst.TestName;
+                    existingPatient.TestCharges = tst.TestCharges;
+                    existingPatient.TestDiscPerc = tst.TestDiscPerc;
+                    existingPatient.TestDiscAmount = tst.TestDiscAmount;
+                    existingPatient.NetCharges = tst.NetCharges;
+                    DB.SaveChanges();
+                }
+                return tst;
+            }
+
+        }
     }
 }

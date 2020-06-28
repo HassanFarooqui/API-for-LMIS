@@ -39,7 +39,7 @@ namespace Water.Controllers
                 return Json(new
                 {
                     message = "Failed to Save Record",
-                    success = true                    
+                    success = false                    
                 }, JsonRequestBehavior.AllowGet);
             } 
         }
