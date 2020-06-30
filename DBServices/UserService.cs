@@ -176,13 +176,22 @@ namespace DBServices
                     existingPatient.ReferringPartnerID = pt.ReferringPartnerID;
                     existingPatient.panelID = pt.panelID;
                     DB.SaveChanges();
+
+
+                    //existingPatient.Diabetes = pt.Diabetes;
+                    //existingPatient.TB = pt.TB;
+                    //existingPatient.Hepatitis = pt.Hepatitis;
+                    //existingPatient.Fever = pt.Fever;
+                    //existingPatient.Other = pt.Other;
+                    //existingPatient.DepartmentName = pt.DepartmentName;
+                    //existingPatient.EmpReferrenceNo = pt.EmpReferrenceNo;
+                    //existingPatient.ReferredTypeId = pt.ReferredTypeId;
+                    //existingPatient.ReferringPartnerID = pt.ReferringPartnerID;
+                    //existingPatient.panelID = pt.panelID;
+                    //DB.SaveChanges();
                 }
                 return pt;
             }
-           
-        }
-
-      
-
+        }    
     }
 }
