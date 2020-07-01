@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace DataAccessLayer.Model
     [Table("Table_W_Patientinfo_Master")]
     public class Patient
     {
+        [Key]
+        [Column(Order = 0)]
         public int ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

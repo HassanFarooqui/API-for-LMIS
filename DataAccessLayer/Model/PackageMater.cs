@@ -8,27 +8,27 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Model
 {
-    [Table("Table_W_TestType")]
-    public class TestType
+    [Table("Table_W_PackageMaster")]
+  public class PackageMater
     {
         [Key]
         [Column(Order = 0)]
-        public int TestTypeId { get; set; }
+        public int PackageMasterId { get; set; }
 
-        public string TesttypeName { get; set; }
+        public string PackageName { get; set; }
 
-        public string Descrp { get; set; }
+        public bool IsIncentiveAllowed { get; set; }
+
+        public bool IsPartialPackageBookingAllowed { get; set; }
 
         public bool IsActive { get; set; }
 
-        public int? CreatedBy { get; set; }
+        public int CreatedBy { get; set; }
 
         public Nullable<DateTime> CreatedOn { get; set; }
 
-        public int? UpdatedBy { get; set; }
+        public int UpdatedBy { get; set; }
 
         public Nullable<DateTime> UpdatedOn { get; set; }
-
-
     }
 }

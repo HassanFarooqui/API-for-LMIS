@@ -56,6 +56,7 @@
     <Compile Include="Model\Patient.cs" />
     <Compile Include="Model\PatientReferrelTypeModel.cs" />
     <Compile Include="Model\Test.cs" />
+    <Compile Include="Model\TestType.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
