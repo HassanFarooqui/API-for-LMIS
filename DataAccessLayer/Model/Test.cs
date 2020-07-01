@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace DataAccessLayer.Model
     [Table("Table_W_TestList")]
     public class Test
     {
+        [Key]
+        [Column(Order = 0)]
         public int TestId { get; set; }
         public string TestName { get; set; }
 
