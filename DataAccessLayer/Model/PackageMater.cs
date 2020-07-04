@@ -30,5 +30,10 @@ namespace DataAccessLayer.Model
         public int UpdatedBy { get; set; }
 
         public Nullable<DateTime> UpdatedOn { get; set; }
+
+        public double TotalDiscount { get; set; }
+        public double GrandTotal { get; set; }
+
+        public double CreaditLimit { get; set; }
     }
 }

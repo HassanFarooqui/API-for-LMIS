@@ -64,6 +64,8 @@ namespace Water.Controllers
                 }, JsonRequestBehavior.AllowGet);
             }
         }
+
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         public ActionResult GetTestRecordByID(int tst_Id)
         {
             var pt = _testService.GetTestRecById(tst_Id);
@@ -86,5 +88,55 @@ namespace Water.Controllers
 
             }
         }
+
+        public ActionResult AddPackageMaster( PackageMater pkg)
+        {
+            var pkgM = _testService.AddPackageMaster(pkg);
+            if (pkgM != 0)
+            {
+                return Json(new
+                {
+                    message = "Package Save Successfully",
+                    success = true,
+                    model = pkgM
+                }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(new
+                {
+                    message = "Failed to save records",
+                    success = false
+                }, JsonRequestBehavior.AllowGet);
+
+            }
+        }
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        public ActionResult AddPackageDetail(PackaDetail[] packageDetail, int PackageMasterID)
+        {
+            //PackaDetail[] packageDetail,
+            //    var VpackageDetail = _testService.AddPackageDetail(packageDetail.ToList(), PackageMasterID);
+            //    if (VpackageDetail)
+            //    {
+            //        return Json(new
+            //        {
+            //            message = "Package Save Successfully",
+            //            success = true,
+            //            model = VpackageDetail
+            //        }, JsonRequestBehavior.AllowGet);
+            //    }
+            //    else
+            //    {
+            //        return Json(new
+            //        {
+            //            message = "Failed to Save record ",
+            //            success = false
+            //        }, JsonRequestBehavior.AllowGet);
+
+            //    }
+            return null;
+        }
+
+
     }
 }

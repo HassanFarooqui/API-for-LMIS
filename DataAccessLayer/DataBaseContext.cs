@@ -23,5 +23,9 @@ namespace DataAccessLayer
         public DbSet<PanelMasterModel> Panel_Master { get; set; }
 
         public DbSet<Test> test { get; set; }
+
+        public DbSet<PackageMater> packageMaster { get; set; }
+
+        public DbSet<PackaDetail> packageDetail { get; set; }
     }
 }

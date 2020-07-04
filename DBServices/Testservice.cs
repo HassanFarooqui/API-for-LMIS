@@ -81,5 +81,43 @@ namespace DBServices
             }
 
         }
+
+
+        public int AddPackageMaster( PackageMater pkg)
+        {
+            pkg.CreatedOn = DateTime.Now;
+            var Vpkg = DB.packageMaster.Add(pkg);
+            DB.SaveChanges();
+            if (Vpkg != null)
+            {
+                return Vpkg.PackageMasterId;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        public bool AddPackageDetail(List<PackaDetail> pkgD, int PackageMasterID)
+        {
+            int count = 0;
+            foreach (var item in pkgD)
+            {
+                item.CreatedOn = DateTime.Now;
+                item.PackageMasterId = PackageMasterID;
+                var VpkgD = DB.packageDetail.Add(item);
+                DB.SaveChanges();
+                count++;
+            }
+            if (count == pkgD.Count)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
     }
 }

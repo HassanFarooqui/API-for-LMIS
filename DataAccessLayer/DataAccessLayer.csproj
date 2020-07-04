@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="DataBaseContext.cs" />
     <Compile Include="Model\GenderModel.cs" />
+    <Compile Include="Model\PackaDetail.cs" />
+    <Compile Include="Model\PackageMater.cs" />
     <Compile Include="Model\PanelMasterModel.cs" />
     <Compile Include="Model\PartnerName.cs" />
     <Compile Include="Model\Patient.cs" />
