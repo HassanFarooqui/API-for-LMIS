@@ -97,18 +97,14 @@ namespace DBServices
                 return 0;
             }
         }
-        public bool AddPackageDetail(List<PackaDetail> pkgD, int PackageMasterID)
+        public bool AddPackageDetail(PackaDetail TestListItem, int PackageMasterID)
         {
-            int count = 0;
-            foreach (var item in pkgD)
-            {
-                item.CreatedOn = DateTime.Now;
-                item.PackageMasterId = PackageMasterID;
-                var VpkgD = DB.packageDetail.Add(item);
-                DB.SaveChanges();
-                count++;
-            }
-            if (count == pkgD.Count)
+
+            TestListItem.CreatedOn = DateTime.Now;
+            TestListItem.PackageMasterId = PackageMasterID;
+            var VTestListItem = DB.packageDetail.Add(TestListItem);
+            DB.SaveChanges();
+            if (VTestListItem != null)
             {
                 return true;
             }

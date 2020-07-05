@@ -13,6 +13,6 @@ namespace DBServices
         int AddTest(Test tst);
         List<Test> GetTestRecById(int tst_Id);
         int AddPackageMaster(PackageMater pkg);
-        bool AddPackageDetail(List<PackaDetail> pkgD, int PackageMasterID);
+        bool AddPackageDetail(PackaDetail TestListItem, int PackageMasterID);
     }
 }

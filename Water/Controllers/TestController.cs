@@ -65,7 +65,7 @@ namespace Water.Controllers
             }
         }
 
-        [EnableCors(origins: "*", headers: "*", methods: "*")]
+     
         public ActionResult GetTestRecordByID(int tst_Id)
         {
             var pt = _testService.GetTestRecById(tst_Id);
@@ -88,19 +88,34 @@ namespace Water.Controllers
 
             }
         }
-
-        public ActionResult AddPackageMaster( PackageMater pkg)
+       
+        public ActionResult PackgeAddKardo( PackageMater pkg, PackaDetail[] ListOfTestPackage, string PackageName)
         {
+
+           // if(ListOfTestPackage.Length == 0 || ListOfTestPackage == null)
+           // {
+           //     return Json(new
+           //     {
+           //         message = "1 Call form API",
+           //         success = false
+           //     }, JsonRequestBehavior.AllowGet);
+           // }
+
             var pkgM = _testService.AddPackageMaster(pkg);
             if (pkgM != 0)
             {
+                foreach (var item in ListOfTestPackage)
+                {
+                    var VpackageDetail = _testService.AddPackageDetail(item,pkgM);
+                }
                 return Json(new
                 {
-                    message = "Package Save Successfully",
+                    message = "Save record successfully",
                     success = true,
                     model = pkgM
                 }, JsonRequestBehavior.AllowGet);
             }
+
             else
             {
                 return Json(new
@@ -111,7 +126,7 @@ namespace Water.Controllers
 
             }
         }
-        [EnableCors(origins: "*", headers: "*", methods: "*")]
+      
         public ActionResult AddPackageDetail(PackaDetail[] packageDetail, int PackageMasterID)
         {
             //PackaDetail[] packageDetail,

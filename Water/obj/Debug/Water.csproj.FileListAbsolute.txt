@@ -1,3 +1,4 @@
+C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\Water\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\Water\bin\ApplicationInsights.config
 C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\Water\bin\roslyn\csc.exe
 C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\Water\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -7,7 +8,6 @@ C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\Water\bin\r
 C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\Water\bin\roslyn\Microsoft.CSharp.Core.targets
 C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\Water\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\Water\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\Water\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\Water\bin\roslyn\vbc.exe
 C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\Water\bin\roslyn\VBCSCompiler.exe
 C:\Users\Hassan Farooqui\documents\visual studio 2015\Projects\Water\Water\bin\roslyn\VBCSCompiler.exe.config
