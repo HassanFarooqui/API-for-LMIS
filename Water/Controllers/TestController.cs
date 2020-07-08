@@ -153,5 +153,31 @@ namespace Water.Controllers
         }
 
 
+        public ActionResult AddPackageDetail2(PackaDetail[] packageDetail, int PackageMasterID)
+        {
+            //PackaDetail[] packageDetail,
+            //    var VpackageDetail = _testService.AddPackageDetail(packageDetail.ToList(), PackageMasterID);
+            //    if (VpackageDetail)
+            //    {
+            //        return Json(new
+            //        {
+            //            message = "Package Save Successfully",
+            //            success = true,
+            //            model = VpackageDetail
+            //        }, JsonRequestBehavior.AllowGet);
+            //    }
+            //    else
+            //    {
+            //        return Json(new
+            //        {
+            //            message = "Failed to Save record ",
+            //            success = false
+            //        }, JsonRequestBehavior.AllowGet);
+
+            //    }
+            return null;
+        }
+
+
     }
 }
