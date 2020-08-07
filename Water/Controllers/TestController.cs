@@ -7,6 +7,7 @@ using DataAccessLayer;
 using DBServices;
 using System.Web.Http.Cors;
 using DataAccessLayer.Model;
+using Newtonsoft.Json;
 
 namespace Water.Controllers
 {
@@ -89,45 +90,47 @@ namespace Water.Controllers
             }
         }
        
-        public ActionResult PackgeAddKardo( PackageMater pkg, PackaDetail[] ListOfTestPackage, string PackageName)
+        public ActionResult AddPackageDetail(AngularAPICalls APIcalls) //PackageMater pkg, PackaDetail[] ListOfTestPackage, string PackageName
         {
-
-           // if(ListOfTestPackage.Length == 0 || ListOfTestPackage == null)
-           // {
-           //     return Json(new
-           //     {
-           //         message = "1 Call form API",
-           //         success = false
-           //     }, JsonRequestBehavior.AllowGet);
-           // }
-
-            var pkgM = _testService.AddPackageMaster(pkg);
-            if (pkgM != 0)
+            //   var data = JsonConvert.DeserializeObject<List<PackaDetail>>(APIcalls.json);
+            try
             {
-                foreach (var item in ListOfTestPackage)
+                var packageMasterData = JsonConvert.DeserializeObject<PackageMater>(APIcalls.PackageMasterJson);
+                List<PackaDetail> packageDetailData = JsonConvert.DeserializeObject<List<PackaDetail>>(APIcalls.PackageDetailsJson);
+
+
+                var pkgM = _testService.AddPackageMaster(packageMasterData);
+                if (pkgM != 0)
                 {
-                    var VpackageDetail = _testService.AddPackageDetail(item,pkgM);
+                    foreach (var item in packageDetailData)
+                    {
+                        var VpackageDetail = _testService.AddPackageDetail(item, pkgM);
+                    }
+                    return Json(new
+                    {
+                        message = "Save record successfully",
+                        success = true,                      
+                    }, JsonRequestBehavior.AllowGet);
                 }
-                return Json(new
+
+                else
                 {
-                    message = "Save record successfully",
-                    success = true,
-                    model = pkgM
-                }, JsonRequestBehavior.AllowGet);
+                    return Json(new
+                    {
+                        message = "Failed to save records",
+                        success = false
+                    }, JsonRequestBehavior.AllowGet);
+                }
             }
 
-            else
+            catch (Exception ex)
             {
-                return Json(new
-                {
-                    message = "Failed to save records",
-                    success = false
-                }, JsonRequestBehavior.AllowGet);
 
             }
+            return null;
         }
       
-        public ActionResult AddPackageDetail(PackaDetail[] packageDetail, int PackageMasterID)
+        public ActionResult AddPackageDetail3(PackaDetail[] packageDetail, int PackageMasterID)
         {
             //PackaDetail[] packageDetail,
             //    var VpackageDetail = _testService.AddPackageDetail(packageDetail.ToList(), PackageMasterID);

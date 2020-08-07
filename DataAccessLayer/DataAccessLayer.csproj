@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBaseContext.cs" />
+    <Compile Include="Model\AngularAPICalls.cs" />
     <Compile Include="Model\GenderModel.cs" />
     <Compile Include="Model\PackaDetail.cs" />
     <Compile Include="Model\PackageMater.cs" />

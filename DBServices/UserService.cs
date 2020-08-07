@@ -44,8 +44,20 @@ namespace DBServices
             else
             {
                 return null;
+            }            
+        }
+
+        public UserModel GetUserByFNameAndLName(string FName, string LName)
+        {
+            var query = DB.user.Where(x => x.FirstName.Equals(FName, StringComparison.OrdinalIgnoreCase) && x.LastName.Equals(LName, StringComparison.OrdinalIgnoreCase));
+            if (query != null && query.Count() == 1)
+            {
+                return query.FirstOrDefault();
             }
-            
+            else
+            {
+                return null;
+            }
         }
 
         public List<Patient> GetPatientList()

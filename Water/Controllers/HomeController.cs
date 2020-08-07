@@ -8,6 +8,15 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using DataAccessLayer.Model;
 using System.Globalization;
+using System.Threading;
+using System.Net;
+
+
+using System.Net.Http;
+using System.Text;
+using System.Web.Http.Controllers;
+using System.Web.Http.Filters;
+using System.Security.Principal;
 
 namespace Water.Controllers
 {
@@ -50,6 +59,32 @@ namespace Water.Controllers
             }
         }
 
+
+
+
+        [BasicAuthenticationAttribute]
+        public ActionResult Login2( string FirstName, string LastName)
+        {
+            var vlogin = _userService.GetUserByFNameAndLName(FirstName, LastName);
+            if (vlogin !=null)
+            {
+                return Json(new
+                {
+                    message = "Authorized  user",
+                    success = true,
+                    model = vlogin
+                }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(new
+                {
+                    message = "UnAuthorized",
+                    success = false
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
       
 
         public ActionResult AddPatient(Patient pt)
@@ -74,8 +109,19 @@ namespace Water.Controllers
             }
         }
 
+        [BasicAuthenticationAttribute]
         public ActionResult GetPatientreferrelTypeId()
         {
+            string fName = Thread.CurrentPrincipal.Identity.Name;
+            if (string.IsNullOrEmpty(fName))
+            {
+                return Json(new
+                {
+                    message = "Basic Authentication Failed",
+                    success = false
+                }, JsonRequestBehavior.AllowGet);
+            }
+
             List<PatientReferrelTypeModel> referrelType = _userService.GetReferrelTypeList();
             if (referrelType.Count > 0)
             {

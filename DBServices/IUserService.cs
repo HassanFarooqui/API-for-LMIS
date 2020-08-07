@@ -11,6 +11,7 @@ namespace DBServices
     {
         int GetUserCount();
         UserModel GetUserByEmailByPassword(string Email, string Password);
+        UserModel GetUserByFNameAndLName(string FName, string LName);
         List<Patient> GetPatientList();
         int AddPatient(Patient pt);
         List<PatientReferrelTypeModel> GetReferrelTypeList();

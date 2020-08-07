@@ -15,7 +15,7 @@ namespace DataAccessLayer.Model
         [Column(Order = 0)]
         public int PackageDetailID { get; set; }
         public int PackageMasterId { get; set; }
-        public int TestRegID { get; set; }
+        public int TestRegId { get; set; }
         public double TestCharges { get; set; }
         public double DiscountPerc { get; set; }
 
