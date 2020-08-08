@@ -17,9 +17,9 @@ namespace DataAccessLayer.Model
         public int PackageMasterId { get; set; }
         public int TestRegId { get; set; }
         public double TestCharges { get; set; }
-        public double DiscountPerc { get; set; }
+        public double TestDiscPerc { get; set; }
 
-        public double DiscountAmount { get; set; }
+        public double TestDiscAmount { get; set; }
 
         public double NetCharges { get; set; }
 
